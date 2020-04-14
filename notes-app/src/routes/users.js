@@ -17,8 +17,8 @@ router.get("/users/signup", (req,res)=>
 
 router.post('/users/signin',passport.authenticate('local', {
     successRedirect: "/notes",
-    failureRedirect: "/users/signin",
-    failureFlash: true
+    failureRedirect: "/users/signin"
+  
 }));
 router.post("/users/signup", async (req, res) =>
  {
