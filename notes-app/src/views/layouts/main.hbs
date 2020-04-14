@@ -20,7 +20,7 @@
 <body>
 
 
-   <!-- Dropdown Structure -->
+   <nav>
  <ul id = "dropdown" class = "dropdown-content">
          <li><a href="/notes">All Notes</a></li>
     <li><a href="/notes/add">Add A Note</a></li>
@@ -28,16 +28,14 @@
          <li class = "divider"></li>
          <li><a href="/users/logout">Logout</span></a></li>
       </ul>
-<nav>
-  <div class="nav-wrapper">
+
+
+  <div class="nav-wrapper" style="margin-right:10px;">
     <a href="/" class="brand-logo">Notes App</a>
     <ul class="right hide-on-med-and-down">
       <li><a href="/">Home</a></li>
       <li><a href="/users/signin">Login</a></li>
             <li><a href="/users/signup">Register</a></li>
-
-            
-      
     <li> <a class = "btn dropdown-button" href = "#" data-activates = "dropdown">OTHERS
          <i style="margin-top:-15px"class = "mdi-navigation-arrow-drop-down right"></i></a>	 </li>
     </ul>
@@ -47,15 +45,24 @@
   
   </div>
 </nav>
+      <!-- Dropdown Trigger -->
+     <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>-->
+       <main class="container p-5">
+  
+
         
  <!-- end of nAVBAR Structure -->
-          <main class="container p-5">
-
+   
       {{{ body }}}
 
     </main>
 
 
     <!-- Scritps -->
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>
+
+
