@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const passport =require('passport');
 
 /*
 const Handlebars = require('handlebars')
@@ -37,7 +38,8 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 // routes
 app.use(require('./routes/index'));
