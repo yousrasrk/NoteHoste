@@ -4,7 +4,7 @@ const Note=require('../models/Note');
 
 const {isAuthenticated}=require('../helpers/auth');
 
-router.get('/notes/edit/:id',isAuthenticated, (req,res)=>
+router.post('/notes/edit/:id',isAuthenticated, (req,res)=>
 {
   const note= Note.findById(req.params.id);
    res.render('notes/edit-note',{note});
@@ -28,7 +28,7 @@ router.get('/notes',isAuthenticated,async (req,res)=>
  
     
   
-   const notes = await Note.find().sort({date:'desc'});
+   const notes = await Note.find({user:req.user.id}).sort({date:'desc'});
    res.render("notes/all-notes", { notes });
 console.log({notes});
     
@@ -69,10 +69,10 @@ if (errors.length > 0) {
 
 } else {
 const  newNote=new Note({title,description});
-NewNote.user=req.user.id;
+newNote.user=req.user.id;
  newNote.save();
 console.log(newNote);
-res.send('ok');
+res.redirect("/notes");
  }
   
 });
