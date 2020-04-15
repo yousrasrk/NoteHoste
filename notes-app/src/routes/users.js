@@ -42,7 +42,6 @@ router.post("/users/signup", async (req, res) =>
         confirm_password
       });
     } else {
-         // Look for email coincidence
        const emailUser = await User.findOne({email:email});
         const newUser= new User({name,email,password});
         if(emailUser)
@@ -51,7 +50,6 @@ router.post("/users/signup", async (req, res) =>
       console.log('email already exist');
       res.redirect('users/signup');
         }
-              // Saving a New User
 
         else{
        newUser.password  = await newUser.encryptPassword(password);
@@ -65,7 +63,7 @@ router.post("/users/signup", async (req, res) =>
 router.get('/users/logout',(req,res)=>
 {
   req.logout();
-  res.redirect('/');
+  res.redirect("/users/signin");
 }
 );
 
