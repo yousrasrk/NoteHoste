@@ -4,19 +4,21 @@ const Note=require('../models/Note');
 
 const {isAuthenticated}=require('../helpers/auth');
 
-router.post('/notes/edit/:id',isAuthenticated, (req,res)=>
+router.get('/notes/edit/:id',isAuthenticated, async(req,res)=>
 {
-  const note= Note.findById(req.params.id);
+  const note= await Note.findById(req.params.id);
+  console.log('hey0');
+
    res.render('notes/edit-note',{note});
-   // console.log(note);
 }
 );
 
-router.post('/notes/edit-note/:id',isAuthenticated,async (req, res) => {
+router.get('/notes/edit-note/:id',isAuthenticated,async (req, res) => {
     console.log('hey1');
  
     const { title, description } = req.body;
-    await Note.findByIdAndUpdate(req.params.id, { title, description });
+    await Note.findByIdAndUpdate(req.params.id, { title, description },    {upsert: true, new: true}
+      );
    
     res.redirect("/notes");
     console.log('hey2');
@@ -30,7 +32,7 @@ router.get('/notes',isAuthenticated,async (req,res)=>
   
    const notes = await Note.find({user:req.user.id}).sort({date:'desc'});
    res.render("notes/all-notes", { notes });
-console.log({notes});
+//console.log({notes});
     
 });
 router.get('/note',async (req,res)=>
