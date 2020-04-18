@@ -13,10 +13,17 @@ router.get('/notes/edit/:id',isAuthenticated, async(req,res)=>
 }
 );
 
-router.get('/notes/edit-note/:id',isAuthenticated,async (req, res) => {
-    console.log('hey1');
+router.post('/notes/edit-note/:id',isAuthenticated,async (req, res) => {
+   
+  const { title, description } = req.body;
+  const  newNote=new Note({title,description});
+  newNote.user=req.user.id;
+  console.log('hola0');
+  
+  console.log(newNote);
+  console.log('hola1');
+  console.log('hey1');
  
-    const { title, description } = req.body;
     await Note.findByIdAndUpdate(req.params.id, { title, description },    {upsert: true, new: true}
       );
    
