@@ -15,10 +15,10 @@
 
 <div class="row">
     
-    <form action="/notes/edit-note/{{note._id}}" method="GET">
+      <form action="/notes/edit-note/{{note._id}}" method="post">
    <div class="row">
     <div class="input-field col s6">
-      <input value="{{note.title}}" id="first_name2" type="text" class="validate">
+      <input value="{{note.title}}" id="first_name2" type="text" class="validate" name="title">
       <label class="active" for="first_name2">title</label>
     </div>
   </div>
@@ -27,7 +27,7 @@
    
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="description" class="materialize-textarea" >{{note.description}}</textarea>
+          <textarea name="description" id="description" class="materialize-textarea" >{{note.description}}</textarea>
           <label for="description">description</label>
         </div>
       </div>
