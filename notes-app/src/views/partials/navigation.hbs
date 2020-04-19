@@ -1,0 +1,43 @@
+<nav>
+ <ul id = "dropdown1" class = "dropdown-content">
+         <li><a href="/notes">All Notes</a></li>
+    <li><a href="/notes/add">Add A Note</a></li>
+
+         <li class = "divider"></li>
+         <li><a href="/users/logout">Logout</span></a></li>
+      </ul>
+
+
+  <div class="nav-wrapper" style="margin-right:10px;">
+    <a href="/" class="brand-logo">NoteHost</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+  {{#if login}}
+        
+           <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Other activities</a>
+
+
+  {{else}}
+<li><a href="/users/signin">Login</a></li>
+            <li><a href="/users/signup">Register</a></li>
+
+
+       {{/if}}
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $('.dropdown-trigger').dropdown();
+    </script>
+
+      <!-- Dropdown Trigger -->
+     <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>-->
+  
+  </div>
+</nav>
