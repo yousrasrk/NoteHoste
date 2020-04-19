@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 const NoteSchema = new Schema(
   {
+    
     title: {
       type: String,
       required: true
@@ -14,7 +15,7 @@ const NoteSchema = new Schema(
     },
     user: {
       type: String,
-
+      required:true
     },
     date: {
       type: Date,
