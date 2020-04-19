@@ -16,16 +16,21 @@ passport.use(new LocalStrategy({
       if(match) {
         return done(null, user);
       } else {
+        const errors = [];
+        errors.push({ text: "incorrect email or password" });
         return done(null, false, { message: 'Incorrect Password.' });
+
       }
     }
   }));
   passport.serializeUser((user, done) => {
+
     done(null, user.id);
   });
   
   passport.deserializeUser((id, done) => {
     User.findById(id, (err, user) => {
+      console.log(user);
       done(err, user);
     });
   });
