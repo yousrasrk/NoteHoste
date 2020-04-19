@@ -7,6 +7,7 @@ const session = require('express-session');
 const passport =require('passport');
 
 
+
 const Handlebars = require('handlebars')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
@@ -47,7 +48,12 @@ app.use(require('./routes/users'));
 app.use(require('./routes/notes'));
 
 
-
+// Global Variables
+app.use((req, res, next) => {
+ 
+  res.locals.user = req.user || null;
+  next();
+});
 // Server is listening
 app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
