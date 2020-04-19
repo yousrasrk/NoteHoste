@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,35 +17,25 @@
       <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
       </script> 
       </script> 
+
+
+   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
 </head>
 <body>
+  <!-- Dropdown Trigger -->
 
-
-   <nav>
- <ul id = "dropdown" class = "dropdown-content">
-         <li><a href="/notes">All Notes</a></li>
-    <li><a href="/notes/add">Add A Note</a></li>
-
-         <li class = "divider"></li>
-         <li><a href="/users/logout">Logout</span></a></li>
-      </ul>
-
-
-  <div class="nav-wrapper" style="margin-right:10px;">
-    <a href="/" class="brand-logo">Notes App</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="/">Home</a></li>
-      <li><a href="/users/signin">Login</a></li>
-            <li><a href="/users/signup">Register</a></li>
-    <li> <a class = "btn dropdown-button" href = "#" data-activates = "dropdown">OTHERS
-         <i style="margin-top:-15px"class = "mdi-navigation-arrow-drop-down right"></i></a>	 </li>
-    </ul>
-
-      <!-- Dropdown Trigger -->
-     <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>-->
+  <!-- Dropdown Structure -->
   
-  </div>
-</nav>
+
+ 
+ {{> navigation }}
+
+
       <!-- Dropdown Trigger -->
      <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>-->
        <main class="container p-5">
