@@ -12,14 +12,19 @@ router.get("/users/signin", (req,res)=>
 router.get("/users/signup", (req,res)=>
 {
     res.render('users/signup');
+
 }
 );
 
 router.post('/users/signin',passport.authenticate('local', {
-    successRedirect: "/notes",
-    failureRedirect: "/users/signin"
   
-}));
+  successRedirect: "/notes",
+    failureRedirect: "/users/signin"
+ 
+  
+})
+
+);
 router.post("/users/signup", async (req, res) =>
  {
     const errors = [];
@@ -40,7 +45,7 @@ router.post("/users/signup", async (req, res) =>
         email,
         password,
         confirm_password
-      });
+      });       
     } else {
        const emailUser = await User.findOne({email:email});
         const newUser= new User({name,email,password});
@@ -54,7 +59,7 @@ router.post("/users/signup", async (req, res) =>
         else{
        newUser.password  = await newUser.encryptPassword(password);
        await newUser.save();
-       const a=1;
+       
        res.redirect("/users/signin");
       
     }
@@ -62,8 +67,13 @@ router.post("/users/signup", async (req, res) =>
   });
 router.get('/users/logout',(req,res)=>
 {
+
+ 
   req.logout();
+ 
+
   res.redirect("/users/signin");
+
 }
 );
 
