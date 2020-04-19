@@ -1,4 +1,4 @@
-{{#each errors}}
+{{#if errors}}
 
 
   
@@ -7,8 +7,18 @@
    
 
 
-{{/each}}
+{{/if}}
 
+{{#if messages}}
+
+
+  
+  
+ <script>  M.toast({html: 'Note Added Successfully'}) </script>
+   
+
+
+{{/if}}
 
 <div class="container" style="margin-top:100px;">
     
