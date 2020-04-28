@@ -20,8 +20,36 @@ const NoteSchema = new Schema(
     date: {
       type: Date,
       default:Date.now
+    },
+     day: {
+      type: Date,
+    },
+    comments:
+    [ {
+     
+      type: mongoose.Schema.Types.ObjectId,
+      ref:"Comment",
+      
+    
     }
+    ],
+    
+    text:
+    [ {
+     
+      type: String,
+     
+    }
+    ],
+    msg: {
+      type:String,
+    },
+    private: {
+      type:String,
+    },
   },
+  
+ 
   {
     timestamps: true
   },{
