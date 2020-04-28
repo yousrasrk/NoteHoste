@@ -9,6 +9,8 @@ passport.use(new LocalStrategy({
     // Match Email's User
     const user = await User.findOne({email: email});
     if (!user) {
+      const errors = [];
+        errors.push({ text: "incorrect email or password" });
       return done(null, false, { message: 'Not User found.' });
     } else {
       // Match Password's User
@@ -24,12 +26,17 @@ passport.use(new LocalStrategy({
     }
   }));
   passport.serializeUser((user, done) => {
-
+    const errors = [];
+    errors.push({text: " Not Authorized"});
+  
     done(null, user.id);
   });
   
   passport.deserializeUser((id, done) => {
     User.findById(id, (err, user) => {
+      const errors = [];
+  errors.push({text: " Not Authorized"});
+
       console.log(user);
       done(err, user);
     });
