@@ -11,15 +11,18 @@
   <div class="nav-wrapper" style="margin-right:10px;">
     <a href="/" class="brand-logo">NoteHost</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="/">Home</a></li>
+    
   {{#if login}}
         
-           <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Other activities</a>
-
-
+  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Other activities</a>
+ 
+   <li><a href="/public-notes">Forum</a></li>
+  <li><a href="/contact">Contact us</a></li>
   {{else}}
-<li><a href="/users/signin">Login</a></li>
-            <li><a href="/users/signup">Register</a></li>
+           <li><a href="/">Home</a></li>
+           <li><a href="/users/signin">Login</a></li>
+           <li><a href="/users/signup">Register</a></li>
+            <li><a href="/contactus">Contact us</a></li>
 
 
        {{/if}}
