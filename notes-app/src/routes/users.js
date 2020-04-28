@@ -19,11 +19,11 @@ router.get("/users/signup", (req,res)=>
 router.post('/users/signin',passport.authenticate('local', {
   
   successRedirect: "/notes",
+
     failureRedirect: "/users/signin"
  
   
 })
-
 );
 router.post("/users/signup", async (req, res) =>
  {
@@ -38,6 +38,11 @@ router.post("/users/signup", async (req, res) =>
       console.log('Passwords must be at least 4 characters');
 
     }
+    if (!password || !confirm_password) {
+      errors.push({ text: "Passwords not exist" });
+      console.log('Passwords not exist');
+    }
+
     if (errors.length > 0) {
       res.render("users/signup", {
         errors,
@@ -68,7 +73,6 @@ router.post("/users/signup", async (req, res) =>
 router.get('/users/logout',(req,res)=>
 {
 
- 
   req.logout();
  
 
