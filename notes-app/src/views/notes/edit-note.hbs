@@ -9,7 +9,7 @@
       <div class="card-panel" class="z-depth-5">
         <div >
           <div style="color:#00897b; text-align:center; font-size:20px">     <strong>Edit Note</strong> </div>
-
+Plz write all the informations
 
 
 <div class="container" >
@@ -33,7 +33,28 @@
         </div>
       </div>
    
+ <div class="row">
+          <div class="input-field col s12">
+          <input type="date" value="{{day}}" class="datepicker" name="day">{{day}}
+            <label for="description">date for alarm</label>
+          </div>
+        </div>
 
+         <p>
+      <label>
+        <input name="private" value="public" type="radio" checked />
+        <span>public note</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input  name="private" value="private" type="radio" />
+        <span>private note</span>
+      </label>
+    </p>
+        
+      </div>
+    </div>
       
        <div class="card-action">
          <button class="btn waves-effect waves-light" type="submit" name="action">Save

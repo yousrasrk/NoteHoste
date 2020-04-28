@@ -1,0 +1,75 @@
+<h1 style="text-align:center;">Forum</h1>
+   <div class="row" style="margin-top:5px;">
+    {{#each a }}
+
+
+      <div class="col s4">
+         <div class="card-panel">
+            
+            <span class=" text-darken-2"  style="font-size:20px; "  >
+               <p><strong  class="left-align" style="color:#00897b;font-size:20px;"> Title</strong> &nbsp;&nbsp;&nbsp;{{ title }}</p>
+
+
+            <p ><strong style="color:#00897b;"> Description</strong>&nbsp;&nbsp;&nbsp;&nbsp;{{ description }}</p>
+
+
+             </span>
+
+         
+         </div>
+
+         <!--- form--->
+               <!--<div class="card-panel">
+    <span class="blue-text text-darken-2">
+{{text}}</span>
+  </div>-->
+{{#each text}}
+    <div class="card-panel teal lighten-2" style="color:#fff;background-color:">
+<strong>{{this}}</strong> <br>
+
+  </div>
+{{/each}}
+  <form action="/Comment/{{id}}" method="POST">
+
+          <div class="input-field ">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea  name="content"id="icon_prefix2" class="materialize-textarea"></textarea>
+          <label for="icon_prefix2">write a comment ..</label>
+        
+      <div style="background-color:; text-align:right;">
+         <button  class="btn waves-effect waves-light" type="submit" name="action">send
+              <i class="material-icons right"> comment</i>
+         </button>
+  
+  </div>
+         
+ </div>
+</form> 
+                  <!--- form--->
+
+   </div>
+
+  
+ 
+
+{{/each}}
+</div>
+
+
+  
+
+
+
+
+       
+      
+
+
+
+
+
+  
+              
+
+
+  

@@ -3,7 +3,7 @@
 
   
   
- <script>  M.toast({html: 'missing title or description'}) </script>
+ <script>  M.toast({html: 'please enter all the informations'}) </script>
    
 
 
@@ -44,6 +44,42 @@
             <label for="description">Descriptipn</label>
           </div>
         </div>
+        <div class="row">
+          <div class="input-field col s12">
+          <input type="date" class="datepicker" name="day">
+            <label for="description">date for alarm</label>
+          </div>
+        </div>
+
+
+        
+   <!--      <p>
+      <label>
+        <input type="checkbox"  name="private" value="public"/>
+        <span>public</span>
+      </label>
+    </p>
+
+    <p>
+      <label>
+        <input type="checkbox"  name="private" value="private"/>
+        <span>private</span>
+      </label>
+    </p>
+-->
+         <p>
+      <label>
+        <input name="private" value="public" type="radio" checked />
+        <span>public note</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input  name="private" value="private" type="radio" />
+        <span>private note</span>
+      </label>
+    </p>
+        
       </div>
     </div>
           
@@ -58,4 +94,3 @@
       </div>
     </div>
 </div> 
- 
