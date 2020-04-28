@@ -5,7 +5,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const passport =require('passport');
-
+const nodemailer =require('nodemailer');
 
 
 const Handlebars = require('handlebars')
@@ -46,6 +46,7 @@ app.use(passport.session());
 app.use(require('./routes/index'));
 app.use(require('./routes/users'));
 app.use(require('./routes/notes'));
+
 
 
 // Global Variables
