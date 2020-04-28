@@ -7,6 +7,9 @@ helpers.isAuthenticated = (req, res, next) => {
     return next();
   }
   console.log('error_msg', 'Not Authorized.');
+  const errors = [];
+  errors.push({text: " Not Authorized"});
+
   res.redirect('/users/signin');
 };
 
