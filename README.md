@@ -1,5 +1,5 @@
 # presentation
-gestion de prise des notes ainsi que de publier , partager et commenter les notes avec des autre utilisateurs
+l'utilisateur peut s'dentifier  de publier gerer ses notes en pivées , partager et commenter ses notes avec des autre utilisateurs
 
 # guide de l'instalation et de configuration du projet
 
