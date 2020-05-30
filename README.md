@@ -1,3 +1,6 @@
+# presentation
+gestion de prise des notes ainsi que de publier , partager et commenter les notes avec des autre utilisateurs
+
 # guide de l'instalation et de configuration du projet
 
 Etape 1:installation du projet 
@@ -18,3 +21,4 @@ Etape 3:
 Accéder le dossier src  démarrer le projet avec la commande:  nodemon index.js 
 Ouvrez le navigateur et tapez localhost:4000
 
+-
