@@ -1,5 +1,5 @@
 # presentation
-Application Nodejs,l'utilisateur peut s'dentifier, publier ,gerer ses notes en pivées , partager et commenter ses notes avec des autre utilisateurs
+Application Nodejs, l'utilisateur peut s'identifier, publier ,gérer ses notes en privé, partager et commenter ses notes avec d'autres utilisateurs.
 
 # guide de l'instalation et de configuration du projet
 
